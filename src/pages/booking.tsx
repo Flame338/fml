@@ -3,18 +3,13 @@ import Link from "next/link";
 import { api } from " y/utils/api";
 import { Container } from "postcss";
 import { useRouter } from "next/router";
+import { useUser } from "@clerk/nextjs";
 
 export default function Home() {
-  const router = useRouter()
+  const user = useUser();
+  console.log(user);
   
-
-  const handleClick =() => {
-    console.log('Returning Home') 
-    router.push('/')
-    console.log('About us')
-    router.push('/about')
-  }
-  
+  //const { data,isLoading } = api.posts.getAll.useQuery();
   return (
     <>
       <Head>
@@ -27,6 +22,9 @@ export default function Home() {
         <div className="container-sm bg-white border-white border-2 rounded-md h-60 w-80">
           <div className="text-black text-left font-light text-lg">
             <label className="text-black text-center font-light font-serif">from</label>
+            <div className="relative flex flex-col">
+              <button>Dropdown</button>
+            </div>
           </div>
         </div>
         <div className ="my-28">
@@ -48,11 +46,6 @@ export default function Home() {
           </div>
         </div>
         </div>
-        
-        
-      
-        
-        
       </main>
     </>
   );

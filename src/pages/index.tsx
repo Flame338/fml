@@ -8,7 +8,7 @@ export default function Home() {
   const router = useRouter()
   const user = useUser();
 
-  //const { data } = api.posts.getAll.useQuery()
+ // const { data } = api.posts.getAll.useQuery()
   const handleClick =() =>{
     console.log('Searching Dates')
     router.push('/booking')
