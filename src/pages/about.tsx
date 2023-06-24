@@ -22,7 +22,7 @@ Your trust and satisfaction are our top priorities, which is why we prioritize t
 Join the FML community today and embark on unforgettable adventures with us. Let us be your trusted companion in transforming your travel dreams into reality. Start exploring our vast selection of destinations and unlock a world of possibilities.
 
 At FML, your journey begins here.
-            </p>
+            </div>
        
         </div>
    );
