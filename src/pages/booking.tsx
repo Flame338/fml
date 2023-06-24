@@ -11,7 +11,8 @@ export default function Home() {
   const handleClick =() => {
     console.log('Returning Home') 
     router.push('/')
-
+    console.log('About us')
+    router.push('/about')
   }
   
   return (
@@ -32,7 +33,7 @@ export default function Home() {
                 <li className ='px-4'><button>Services</button></li>
                 <li className ='px-4'><button>Rewards</button></li>
                 <li className ='px-4'><button>Contact Us</button></li>
-                <li className ='px-4'><button>About Us</button></li>
+                <li className ='px-4'><button onClick ={handleClick}>About Us</button></li>
             </ul>
         </div>
         <div className="flex flex-row space-x-8 my-6 mx-40">
@@ -47,6 +48,7 @@ export default function Home() {
         `</svg>
 
         </div>
+        
         <div className="container-sm bg-white border-white border-2 rounded-md h-60 w-80 ">
           <div className="text-black text-left font-light text-lg">
             <label className=" font-serif">Destination</label>
@@ -59,6 +61,7 @@ export default function Home() {
           </div>
         </div>
         </div>
+        
         
       
         
