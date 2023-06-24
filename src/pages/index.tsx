@@ -23,7 +23,7 @@ export default function Home() {
             src="/landing.jpg"
             width={760}
             height={56}
-            alt="Landing photo" 
+            alt="Landing photo"   
             />
         </div>
         <div className=" justify-self-end w-full h-full border-x md:max-w-3xl">  
@@ -34,10 +34,12 @@ export default function Home() {
           
           <div>
               <div>
-                Hi
+                Bottom Text
               </div>
               <div>
-
+                <button className="bg-violet-900 text-white px-10 py-5 text-xl uppercase tracking-widest hover:bg-white hover:text-black rounded-full">
+                  Book Trip
+                </button>
               </div>
           </div>
         </div>
