@@ -4,6 +4,7 @@ import { type AppType } from "next/app";
 import { api } from " y/utils/api";
 import " y/styles/globals.css";
 import { ClerkProvider } from "@clerk/nextjs";
+import Link from "next/link";
 
 const MyApp: AppType = ({ Component, pageProps }) => {
   return (
@@ -14,11 +15,11 @@ const MyApp: AppType = ({ Component, pageProps }) => {
             </div>
             
             <ul className='flex flex-row '>
-                <li className ='px-4' >Home</li>
-                <li className ='px-4'>Services</li>
-                <li className ='px-4'>Rewards</li>
-                <li className ='px-4'>Contact Us</li>
-                <li className ='px-4'>About Us</li>
+                <Link className ='px-4' href="/" >Home</Link>
+                <Link className ='px-4' href="/service">Services</Link>
+                <Link className ='px-4' href="/reward">Rewards</Link>
+                <Link className ='px-4' href="/contact">Contact Us</Link>
+                <Link className ='px-4' href="/about">About Us</Link>
             </ul>
         </div>
     <Component {...pageProps} />

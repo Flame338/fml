@@ -3,12 +3,16 @@ import Link from "next/link";
 import { api } from " y/utils/api";
 import Image from 'next/image'
 import { SignIn, SignInButton, SignOutButton, useUser } from "@clerk/nextjs";
-
+import { useRouter } from "next/router";
 export default function Home() {
-  
+  const router = useRouter()
   const user = useUser();
 
-  const { data } = api.posts.getAll.useQuery()
+  //const { data } = api.posts.getAll.useQuery()
+  const handleClick =() =>{
+    console.log('Searching Dates')
+    router.push('/booking')
+  }
   return (
     <>
       <Head>
@@ -20,7 +24,7 @@ export default function Home() {
         <div className=" justify-self-start w-full h-full border-x md:max-w-3xl">
           <Image
             className="object-fill" 
-            src="/landing.jpg"
+            src="/globe.jpeg"
             width={760}
             height={56}
             alt="Landing photo"   
@@ -33,11 +37,11 @@ export default function Home() {
           </div>
           
           <div>
-              <div>
+              <div className="flex justify-center w-full h-60 ">
                 Bottom Text
               </div>
-              <div>
-                <button className="bg-violet-900 text-white px-10 py-5 text-xl uppercase tracking-widest hover:bg-white hover:text-black rounded-full">
+              <div className="flex justify-center">
+                <button onClick ={handleClick} className="bg-violet-900 text-white px-10 py-5 text-xl uppercase tracking-widest hover:bg-white hover:text-black rounded-full">
                   Book Trip
                 </button>
               </div>
