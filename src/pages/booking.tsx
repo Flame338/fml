@@ -23,23 +23,10 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main className="text text-center text-slate-100">
-        <div className='flex justify-between items-center h-20 px-4'>
-            <div>
-                <h1>FML</h1>
-            </div>
-            
-            <ul className='flex flex-row '>
-                <li className ='px-4' ><button onClick ={handleClick}>Home</button></li>
-                <li className ='px-4'><button>Services</button></li>
-                <li className ='px-4'><button>Rewards</button></li>
-                <li className ='px-4'><button>Contact Us</button></li>
-                <li className ='px-4'><button onClick ={handleClick}>About Us</button></li>
-            </ul>
-        </div>
-        <div className="flex flex-row space-x-8 my-6 mx-40">
+        <div className="flex justify-center flex-row space-x-8 my-6 mx-40">
         <div className="container-sm bg-white border-white border-2 rounded-md h-60 w-80">
           <div className="text-black text-left font-light text-lg">
-            <label className="text-black font-light font-serif">from</label>
+            <label className="text-black text-center font-light font-serif">from</label>
           </div>
         </div>
         <div className ="my-28">

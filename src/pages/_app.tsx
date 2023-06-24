@@ -9,19 +9,29 @@ import Link from "next/link";
 const MyApp: AppType = ({ Component, pageProps }) => {
   return (
   <ClerkProvider {...pageProps}>
-    <div className='flex justify-between items-center h-20 px-4'>
-            <div>
+    <div className='flex justify-between items-center h-20 px-4 bg-white text-black font-semibold'>
+            <div >
                 <h1>FML</h1>
             </div>
             
-            <ul className='flex flex-row '>
-                <Link className ='px-4' href="/" >Home</Link>
-                <Link className ='px-4' href="/service">Services</Link>
-                <Link className ='px-4' href="/reward">Rewards</Link>
-                <Link className ='px-4' href="/contact">Contact Us</Link>
-                <Link className ='px-4' href="/about">About Us</Link>
+            <ul className='flex flex-row'>
+              <div className="hover:bg-green-600 p-3 rounded-xl">
+                <Link className ='px-4 font-semibold hover:text-slate-100 ' href="/" >Home</Link>
+              </div>
+              <div className="hover:bg-green-600 p-3 rounded-xl">
+                <Link className ='px-4 font-semibold hover:text-slate-100 ' href="/service">Services</Link>
+              </div>
+              <div className="hover:bg-green-600 p-3 rounded-xl">
+                <Link className ='px-4 font-semibold hover:text-slate-100 ' href="/reward">Rewards</Link>
+              </div>
+              <div className="hover:bg-green-600 p-3 rounded-xl">
+                <Link className ='px-4 font-semibold hover:text-slate-100 ' href="/contact">Contact Us</Link>
+              </div>
+              <div className="hover:bg-green-600 p-3 rounded-xl">
+                <Link className ='px-4 font-semibold hover:text-slate-100 ' href="/ about">About Us</Link>
+              </div>
             </ul>
-        </div>
+     </div>
     <Component {...pageProps} />
   </ClerkProvider>
   );

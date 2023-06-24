@@ -19,3 +19,15 @@ model Post {
 
     @@index([authorId])
 }
+
+model Destination {
+  place       String   @id 
+
+  @@index([place])
+}
+
+model TravelType {
+  class       String    @id 
+
+  @@index([class])
+}
