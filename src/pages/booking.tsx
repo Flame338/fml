@@ -7,15 +7,26 @@ import { useState } from "react";
 import Datetime from 'react-datetime';
 import "react-datetime/css/react-datetime.css"
 import { date } from "zod";
+import React from "react";
 
 export default function Home() {
   const user = useUser();
-  console.log(user);
+  console.log(user)
   const list: string[] = ["Trivandrum", "Delhi", "Chennai"];
   var selectedItem: string = ""; 
   const [isOpen, setIsOpen] = useState(false);
   const isOpen1: boolean = isOpen;
   const isOpen2: boolean = isOpen;
+  const [checkedOne, setCheckedOne] = React.useState(false);
+  const [checkedTwo, setCheckedTwo] = React.useState(false);
+
+  const handleChangeOne = () => {
+    setCheckedOne(!checkedOne);
+  };
+
+  const handleChangeTwo = () => {
+    setCheckedTwo(!checkedTwo);
+  };
   //const { data,isLoading } = api.posts.getAll.useQuery();
   return (
     <>
@@ -33,7 +44,7 @@ export default function Home() {
             <div className="relative flex flex-col items-center h-1/2 rounded-lg">
               <button 
               onClick={() => setIsOpen((prev: boolean) => !prev )}
-              className="text font-bold text-4xl w-full tracking-wider border-4 border-transparent"
+              className="text font-bold text-4xl w-full tracking-wider border-4 border-transparent my-16"
               >
                 Delhi
               </button>
@@ -48,12 +59,6 @@ export default function Home() {
             </div>
           </div>
         </div>
-        <div className ="my-28">
-        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">
-        <path strokeLinecap="round" strokeLinejoin="round" d="M7.5 21L3 16.5m0 0L7.5 12M3 16.5h13.5m0-13.5L21 7.5m0 0L16.5 12M21 7.5H7.5" />
-        `</svg>
-
-        </div>
         
         <div className="container-sm bg-white border-white border-2 rounded-md h-60 w-80 ">
           <div className="text-black text-left font-light text-lg">
@@ -61,7 +66,7 @@ export default function Home() {
             <div className="relative flex flex-col items-center h-1/2 rounded-lg">
               <button
               onClick={() => setIsOpen((prev: boolean) => !prev )} 
-              className="text font-bold text-4xl w-full tracking-wider border-4 border-transparent"
+              className="text font-bold text-4xl w-full tracking-wider border-4 border-transparent my-16"
               >Trivandrum</button>
               {isOpen2 && 
               <div className="bg-slate-100 top-20 flex flex-col items-start rounded-lg p-2 w-full ">
@@ -79,6 +84,15 @@ export default function Home() {
           <div className="text-black text-left font-light text-lg">
             <label className="text-black font-light font-serif ">Travellers</label>
           </div>
+          <div className="text font-bold text-4xl w-full tracking-wider border-3 border-transparent my-16">
+          <select className="bg-slate-600">
+          <option value="someOption">1</option>
+          <option value="otherOption">2</option>
+          <option value="otherOption">3</option>
+          <option value="otherOption">4</option>
+          <option value="otherOption">5</option>
+          </select>
+          </div>
         </div>
         </div>
           
@@ -89,7 +103,7 @@ export default function Home() {
               <div className="flex flex-row justify-center">
                 <Datetime
                 initialViewDate={new Date()} 
-                value={new Date()} input={ true } className="appearance-none flex j-center" />
+                value={new Date()} input={ true } className="appearance-none flex j-center text font-bold text-l w-full tracking-wider border-3 border-transparent my-16" />
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">
                 <path strokeLinecap="round" strokeLinejoin="round" d="M6.75 3v2.25M17.25 3v2.25M3 18.75V7.5a2.25 2.25 0 012.25-2.25h13.5A2.25 2.25 0 0121 7.5v11.25m-18 0A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.75m-18 0v-7.5A2.25 2.25 0 015.25 9h13.5A2.25 2.25 0 0121 11.25v7.5m-9-6h.008v.008H12v-.008zM12 15h.008v.008H12V15zm0 2.25h.008v.008H12v-.008zM9.75 15h.008v.008H9.75V15zm0 2.25h.008v.008H9.75v-.008zM7.5 15h.008v.008H7.5V15zm0 2.25h.008v.008H7.5v-.008zm6.75-4.5h.008v.008h-.008v-.008zm0 2.25h.008v.008h-.008V15zm0 2.25h.008v.008h-.008v-.008zm2.25-4.5h.008v.008H16.5v-.008zm0 2.25h.008v.008H16.5V15z" />
                 </svg>
@@ -103,7 +117,7 @@ export default function Home() {
               <div className="flex flex-row justify-center">
                 <Datetime
                 initialViewDate={new Date()} 
-                value={new Date()} input={ true } className="appearance-none flex justify-center" />
+                value={new Date()} input={ true } className="appearance-none flex justify-center text font-bold text-l w-full tracking-wider border-3 border-transparent my-16" />
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">
                 <path strokeLinecap="round" strokeLinejoin="round" d="M6.75 3v2.25M17.25 3v2.25M3 18.75V7.5a2.25 2.25 0 012.25-2.25h13.5A2.25 2.25 0 0121 7.5v11.25m-18 0A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.75m-18 0v-7.5A2.25 2.25 0 015.25 9h13.5A2.25 2.25 0 0121 11.25v7.5m-9-6h.008v.008H12v-.008zM12 15h.008v.008H12V15zm0 2.25h.008v.008H12v-.008zM9.75 15h.008v.008H9.75V15zm0 2.25h.008v.008H9.75v-.008zM7.5 15h.008v.008H7.5V15zm0 2.25h.008v.008H7.5v-.008zm6.75-4.5h.008v.008h-.008v-.008zm0 2.25h.008v.008h-.008V15zm0 2.25h.008v.008h-.008v-.008zm2.25-4.5h.008v.008H16.5v-.008zm0 2.25h.008v.008H16.5V15z" />
                 </svg>
@@ -114,6 +128,20 @@ export default function Home() {
           <div className="container-sm bg-white border-white border-2 rounded-md h-60 w-80">
             <div className="text-black text-left font-light text-lg">
               <label className="text-black text-center font-light font-serif">Mode of Transport</label>
+            </div>
+            <div >
+            <label className= "flex flex-col justify-start text-slate-950" >
+        <input type="checkbox" />
+        Train
+        
+        <input type="checkbox" />
+        Bus
+        
+        <input type="checkbox" />
+        Flight
+        </label>
+
+
             </div>
           </div>
 
