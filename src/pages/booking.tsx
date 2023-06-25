@@ -122,7 +122,9 @@ export default function Home() {
 
         <div className="flex justify-center ">
                 <button className="bg-green-600 w-1/3 text-white px-10 py-5 text-xl uppercase tracking-widest hover:bg-white hover:text-black rounded-full">
-                  Check Out
+                 <Link href="/checkout">
+                 Check Out
+                  </Link> 
                 </button>
               </div>
       </main>
