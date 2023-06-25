@@ -24,7 +24,7 @@ const MyApp: AppType = ({ Component, pageProps }) => {
                 <Link className ='px-4 font-semibold hover:text-slate-100 ' href="/booking">Services</Link>
               </div>
               <div className="hover:bg-green-600 p-3 rounded-xl">
-                <Link className ='px-4 font-semibold hover:text-slate-100 ' href="/reward">Rewards</Link>
+                <Link className ='px-4 font-semibold hover:text-slate-100 ' href="/rewards">Rewards</Link>
               </div>
               <div className="hover:bg-green-600 p-3 rounded-xl">
                 <Link className ='px-4 font-semibold hover:text-slate-100 ' href="/contact">Contact Us</Link>
