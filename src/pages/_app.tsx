@@ -11,9 +11,9 @@ const MyApp: AppType = ({ Component, pageProps }) => {
 
   return (
   <ClerkProvider {...pageProps}>
-    <div className='flex justify-between items-center h-20 px-4 bg-white text-black font-semibold'>
+    <div className='flex justify-between items-center h-20 px-4 bg-slate-200 text-black font-semibold'>
             <div  >
-                <h1>FML</h1>
+                <h1 className="font-extrabold font-serif text-lg animate-pulse">FML</h1>
             </div>
             
             <ul className='flex flex-row'>
@@ -24,7 +24,7 @@ const MyApp: AppType = ({ Component, pageProps }) => {
                 <Link className ='px-4 font-semibold hover:text-slate-100 ' href="/booking">Services</Link>
               </div>
               <div className="hover:bg-green-600 p-3 rounded-xl">
-                <Link className ='px-4 font-semibold hover:text-slate-100 ' href="/reward">Rewards</Link>
+                <Link className ='px-4 font-semibold hover:text-slate-100 ' href="/rewards">Rewards</Link>
               </div>
               <div className="hover:bg-green-600 p-3 rounded-xl">
                 <Link className ='px-4 font-semibold hover:text-slate-100 ' href="/contact">Contact Us</Link>

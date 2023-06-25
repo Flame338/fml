@@ -1,12 +1,13 @@
 import React from "react";
+
  
 const About = () => {
-    return (
-        <div>
-            <h1>
-                About Us
-                </h1>
-                <p> Welcome to Forgot My Luggage, your ultimate destination for seamless travel experiences. At FML, we believe that travel has the power to enrich lives and create lifelong memories. Our mission is to make the world more accessible by providing a convenient and reliable platform for booking your dream adventures.
+return (
+    <div>
+            <div className="text-lg font-extrabold font-serif underline my-5 hover:animate-bounce">
+                ABOUT US
+            </div>
+            <div className="my-10"> <p className="text-justify text-sl bg-slate-900"> Welcome to Forgot My Luggage, your ultimate destination for seamless travel experiences. At FML, we believe that travel has the power to enrich lives and create lifelong memories. Our mission is to make the world more accessible by providing a convenient and reliable platform for booking your dream adventures.
 
 As avid travelers ourselves, we understand the thrill of discovering new places, immersing in diverse cultures, and embarking on thrilling escapades. With this passion as our driving force, we have curated a vast collection of destinations, accommodations, and activities to cater to every traveler's unique preferences and interests.
 
@@ -20,8 +21,8 @@ Your trust and satisfaction are our top priorities, which is why we prioritize t
 
 Join the FML community today and embark on unforgettable adventures with us. Let us be your trusted companion in transforming your travel dreams into reality. Start exploring our vast selection of destinations and unlock a world of possibilities.
 
-At FML, your journey begins here.
-            </p>
+At FML, your journey begins here.</p>
+            </div>
        
         </div>
    );
