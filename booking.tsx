@@ -133,19 +133,19 @@ export default function Home() {
       <input
         type="checkbox"
         id="example_checkbox"
-        onClick={(event) => handleClick(event)}
+        
       />
       <label htmlFor="example_checkbox">Train</label>
       <input
         type="checkbox"
         id="example_checkbox"
-        onClick={(event) => handleClick(event)}
+       
       />
       <label htmlFor="example_checkbox">Flight</label>
       <input
         type="checkbox"
         id="example_checkbox"
-        onClick={(event) => handleClick(event)}
+       
       />
 
             </div>
