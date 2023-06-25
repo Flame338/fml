@@ -23,7 +23,7 @@ export default function Home() {
       <main className="flex h-screen gap-0">
         <div className=" justify-self-start w-full h-full md:max-w-3xl">
           <Image
-            className="object-fill" 
+            className="object-fill delay-1000 hover:animate-bounce " 
             src="/globe.jpeg"
             width={760}
             height={56}
@@ -38,7 +38,7 @@ export default function Home() {
                 <p>For all your Trips</p> 
               </div>
               <div className="flex justify-center">
-                <button onClick ={handleClick} className="bg-green-600 text-white px-10 py-5 text-xl uppercase tracking-widest hover:bg-white hover:text-black rounded-full">
+                <button onClick ={handleClick} className="hover:animate-pulse bg-green-600 text-white px-10 py-5 text-xl uppercase tracking-widest hover:bg-white hover:text-black rounded-full">
                   Book Trip
                 </button>
               </div>

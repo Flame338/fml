@@ -7,15 +7,23 @@ import { useState } from "react";
 import Datetime from 'react-datetime';
 import "react-datetime/css/react-datetime.css"
 import { date } from "zod";
+import React from "react";
 
 export default function Home() {
   const user = useUser();
-  console.log(user);
+  console.log(user)
   const list: string[] = ["Trivandrum", "Delhi", "Chennai"];
   var selectedItem: string = ""; 
   const [isOpen, setIsOpen] = useState(false);
   const isOpen1: boolean = isOpen;
   const isOpen2: boolean = isOpen;
+  const handleClick = (event: { target: { checked: boolean; }; }) => {
+    if (event.target.checked === true) {
+      console.log("Checked")
+    } else {
+      console.log("Not Checked")
+    }
+  }
   //const { data,isLoading } = api.posts.getAll.useQuery();
   return (
     <>
@@ -27,20 +35,21 @@ export default function Home() {
       <main className="text text-center text-slate-100">
         <div className="flex flex-col">
         <div className="flex justify-center flex-row space-x-8 my-6 mx-40">
-        <div className="container-sm bg-white border-white border-2 rounded-md h-60 w-80">
+          
+        <div className="container-sm bg-white border-white border-2 rounded-md h-40 w-80">
           <div className="text-black text-left font-light text-lg">
-            <label className="text-black text-center font-light font-serif">from</label>
+            <label className="text-black text-center font-light font-serif">From</label>
             <div className="relative flex flex-col items-center h-1/2 rounded-lg">
               <button 
               onClick={() => setIsOpen((prev: boolean) => !prev )}
-              className="text font-bold text-4xl w-full tracking-wider border-4 border-transparent"
+              className="bg-cyan-500 hover:bg-cyan-600  font-bold text-4xl w-full tracking-wider border-4 border-transparent my-10"
               >
                 Delhi
               </button>
             {isOpen1 && 
-            <div className="bg-slate-100 top-20 flex flex-col items-start rounded-lg p-2 w-full ">
+            <div className="bg-slate-100 top-20 flex flex-col items-start rounded-lg p-1 w-full ">
             {list.map((item, i) => (
-              <div className="flex w-full bg-slate-50 p-3 hover:bg-green-600 cursor-pointer rounded-r-lg" key={i}>
+              <div className="flex w-full bg-slate-50 p-1 hover:bg-green-600 cursor-pointer rounded-r-lg" key={i}>
                 <h3 className="font-bold">{item}</h3>
               </div>
             ))}
@@ -48,25 +57,19 @@ export default function Home() {
             </div>
           </div>
         </div>
-        <div className ="my-28">
-        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">
-        <path strokeLinecap="round" strokeLinejoin="round" d="M7.5 21L3 16.5m0 0L7.5 12M3 16.5h13.5m0-13.5L21 7.5m0 0L16.5 12M21 7.5H7.5" />
-        `</svg>
-
-        </div>
         
-        <div className="container-sm bg-white border-white border-2 rounded-md h-60 w-80 ">
+        <div className="container-sm bg-white border-white border-2 rounded-md h-40  w-80 ">
           <div className="text-black text-left font-light text-lg">
             <label className=" font-serif">Destination</label>
             <div className="relative flex flex-col items-center h-1/2 rounded-lg">
               <button
               onClick={() => setIsOpen((prev: boolean) => !prev )} 
-              className="text font-bold text-4xl w-full tracking-wider border-4 border-transparent"
+              className=" bg-cyan-500 hover:bg-cyan-600 text font-bold text-4xl w-full tracking-wider border-4 border-transparent my-10"
               >Trivandrum</button>
               {isOpen2 && 
-              <div className="bg-slate-100 top-20 flex flex-col items-start rounded-lg p-2 w-full ">
+              <div className="bg-slate-100 top-20 flex flex-col items-start rounded-lg p-1 w-full ">
                 {list.map((item, i) => (
-                  <div className="flex w-full bg-slate-50 p-3 hover:bg-green-600 hover:cursor-pointer hover:rounded-r-lg" key={i}>
+                  <div className="flex w-full bg-slate-50 p-1 hover:bg-green-600 hover:cursor-pointer hover:rounded-r-lg" key={i}>
                     <h3 className="font-bold">{item}</h3>
                   </div>
                 ))}
@@ -75,35 +78,45 @@ export default function Home() {
           </div>
         </div>
 
-        <div className="container-sm bg-white border-white border-2 rounded-md h-60 w-80 ">
+        <div className="container-sm bg-white border-white border-2 rounded-md h-40  w-80 ">
           <div className="text-black text-left font-light text-lg">
-            <label className="text-black font-light font-serif ">Travellers</label>
+            <label className="text-black font-light font-serif">Travellers</label>
+          </div>
+          <div className=" bg-cyan-500 text font-bold text-sl w-full tracking-wider border-3 border-transparent my-10">
+          <select className="bg-slate-600 p-1">
+          <option value="someOption">1</option>
+          <option value="otherOption">2</option>
+          <option value="otherOption">3</option>
+          <option value="otherOption">4</option>
+          <option value="otherOption">5</option>
+          </select>
           </div>
         </div>
         </div>
           
         <div className="flex justify-center flex-row space-x-8 my-6 mx-40">
-          <div className="container-sm bg-white border-white border-2 rounded-md h-60 w-80 items">
+          <div className="container-sm bg-white border-white border-2 rounded-md h-40 w-80 items">
+            
             <div className="text-black text-left font-light text-lg">
               <label className="text-black text-center font-light font-serif">Departure</label>
               <div className="flex flex-row justify-center">
                 <Datetime
                 initialViewDate={new Date()} 
-                value={new Date()} input={ true } className="appearance-none flex j-center" />
+                value={new Date()} input={ true } className="appearance-none flex j-center text font-bold text-l w-full tracking-wider border-3 border-transparent my-11" />
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">
                 <path strokeLinecap="round" strokeLinejoin="round" d="M6.75 3v2.25M17.25 3v2.25M3 18.75V7.5a2.25 2.25 0 012.25-2.25h13.5A2.25 2.25 0 0121 7.5v11.25m-18 0A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.75m-18 0v-7.5A2.25 2.25 0 015.25 9h13.5A2.25 2.25 0 0121 11.25v7.5m-9-6h.008v.008H12v-.008zM12 15h.008v.008H12V15zm0 2.25h.008v.008H12v-.008zM9.75 15h.008v.008H9.75V15zm0 2.25h.008v.008H9.75v-.008zM7.5 15h.008v.008H7.5V15zm0 2.25h.008v.008H7.5v-.008zm6.75-4.5h.008v.008h-.008v-.008zm0 2.25h.008v.008h-.008V15zm0 2.25h.008v.008h-.008v-.008zm2.25-4.5h.008v.008H16.5v-.008zm0 2.25h.008v.008H16.5V15z" />
                 </svg>
               </div>
             </div>
           </div>
-
-          <div className="container-sm bg-white border-white border-2 rounded-md h-60 w-80 items">
+          
+          <div className="container-sm bg-white border-white border-2 rounded-md h-40 w-80 items">
             <div className="text-black text-left font-light text-lg">
               <label className="text-black text-center font-light font-serif">Return</label>
               <div className="flex flex-row justify-center">
                 <Datetime
                 initialViewDate={new Date()} 
-                value={new Date()} input={ true } className="appearance-none flex justify-center" />
+                value={new Date()} input={ true } className="appearance-none flex justify-center text font-bold text-l w-full tracking-wider border-3 border-transparent my-10" />
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">
                 <path strokeLinecap="round" strokeLinejoin="round" d="M6.75 3v2.25M17.25 3v2.25M3 18.75V7.5a2.25 2.25 0 012.25-2.25h13.5A2.25 2.25 0 0121 7.5v11.25m-18 0A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.75m-18 0v-7.5A2.25 2.25 0 015.25 9h13.5A2.25 2.25 0 0121 11.25v7.5m-9-6h.008v.008H12v-.008zM12 15h.008v.008H12V15zm0 2.25h.008v.008H12v-.008zM9.75 15h.008v.008H9.75V15zm0 2.25h.008v.008H9.75v-.008zM7.5 15h.008v.008H7.5V15zm0 2.25h.008v.008H7.5v-.008zm6.75-4.5h.008v.008h-.008v-.008zm0 2.25h.008v.008h-.008V15zm0 2.25h.008v.008h-.008v-.008zm2.25-4.5h.008v.008H16.5v-.008zm0 2.25h.008v.008H16.5V15z" />
                 </svg>
@@ -111,17 +124,38 @@ export default function Home() {
             </div>
           </div>
 
-          <div className="container-sm bg-white border-white border-2 rounded-md h-60 w-80">
+          <div className="container-sm bg-white border-white border-2 rounded-md h-40 w-80">
             <div className="text-black text-left font-light text-lg">
               <label className="text-black text-center font-light font-serif">Mode of Transport</label>
+            </div>  
+            <div className="text-black flex flex-row my-5 mx-10">
+            <label htmlFor="example_checkbox">Bus</label>
+      <input
+        type="checkbox"
+        id="example_checkbox"
+        onClick={(event) => handleClick(event)}
+      />
+      <label htmlFor="example_checkbox">Train</label>
+      <input
+        type="checkbox"
+        id="example_checkbox"
+        onClick={(event) => handleClick(event)}
+      />
+      <label htmlFor="example_checkbox">Flight</label>
+      <input
+        type="checkbox"
+        id="example_checkbox"
+        onClick={(event) => handleClick(event)}
+      />
+
             </div>
           </div>
 
         </div>
         </div>
 
-        <div className="flex justify-center ">
-                <button className="bg-green-600 w-1/3 text-white px-10 py-5 text-xl uppercase tracking-widest hover:bg-white hover:text-black rounded-full">
+        <div className="flex mx-40 my-10">
+                <button className="hover:animate-pulse bg-green-600 w-1/3 text-white px-10 py-5 text-xl uppercase tracking-widest hover:bg-white hover:text-black rounded-full ">
                  <Link href="/checkout">
                  Check Out
                   </Link> 
